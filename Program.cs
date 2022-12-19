@@ -4,30 +4,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_1
+namespace Project_2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Write The Prime Number from n1 to n2");
-            Console.Write("Enter The Number1 : ");
-            int n1 = int.Parse(Console.ReadLine());
-            Console.Write("Enter The Number2 : ");
-            int n2 = int.Parse(Console.ReadLine());
-            for (; n1 <= n2; n1++)
+            int n, i, sum;
+            int mn, mx;
+
+            Console.Write("\n\n");
+            Console.Write("Find perfect numbers within a given number of range:\n");
+            Console.Write("------------------------------------------------------");
+            Console.Write("\n\n");
+
+            Console.Write("Input the starting range or number : ");
+            mn = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Input the ending range of number : ");
+            mx = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("The Perfect numbers within the given range : ");
+            for (n = mn; n <= mx; n++)
             {
-                if (n1 % 2 != 0 && n1 % 3 != 0)
+                i = 1;
+                sum = 0;
+                while (i < n)
                 {
-                    Console.WriteLine(n1);
+                    if (n % i == 0)
+                        sum = sum + i;
+                    i++;
                 }
-
-
-
-
+                if (sum == n)
+                    Console.WriteLine("{0} ", n);
             }
+            Console.Write("\n");
+
+
+
+
+
+
         }
     }
 }
-    
-
